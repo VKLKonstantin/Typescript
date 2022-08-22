@@ -1,19 +1,44 @@
 {
+    // Настройки проекта
     "env": {
+        // Проект для браузера
         "browser": true,
+        // Включаем возможности ES6
+        "commonjs": true,
+        // Добавляем возможности ES2017
         "es2021": true
     },
+    // Наборы правил
     "extends": [
-        "standard"
+        // Базовый набор правил eslint
+        "eslint:recommended",
+        // Базовые правила для TypeScript
+        "plugin:@typescript-eslint/recommended"
     ],
+    // Движок парсинга
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaVersion": 13,
-        "sourceType": "module"
+        // Движку нужен проект TS для правил с типами
+        "project": "tsconfig.json",
+        "tsconfigRootDir": "."
     },
+    // Плагин с наборами правил для TypeScript
     "plugins": [
         "@typescript-eslint"
     ],
     "rules": {
+        "no-shadow": [
+            "error",
+            {
+                "builtinGlobals": true
+            }
+        ], // disallow variable
+        "no-duplicate-imports": [
+            "error",
+            {
+                "includeExports": true
+            }
+        ], // disallow
+        "no-template-curly-in-string": "error" // disallow template literal
     }
 }
