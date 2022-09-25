@@ -1,0 +1,43 @@
+<%- include('header'), {title:title} %>
+
+    <div>
+        <table>
+            <tr>
+                <th>title</th>
+                <th>description</th>
+                <th>authors</th>
+                <th>favorite</th>
+                <th>fileCover</th>
+                <th>fileName</th>
+            </tr>
+
+            <tr>
+                <td>
+                    <%= book.title %>
+                </td>
+                <td>
+                    <%= book.description %>
+                </td>
+                <td>
+                    <%= book.authors %>
+                </td>
+                <td>
+                    <%= book.favorite %>
+                </td>
+                <td>
+                    <%= book.fileCover %>
+                </td>
+                <td>
+                    <%= book.fileName %>
+                </td>
+            </tr>
+
+        </table>
+        <a href="/api/editBook/<%= book.idBook %>" class="gradient-button"> Редактировать </a>
+        <a href="/api/books" class="back"> Назад </a>
+
+        <form method="POST" action="/api/book/delete/<%= book.idBook %>" >
+            <button type="submit" class="button_delete" >Удалить</button>
+        </form>
+    </div>
+    <%- include('end') %>

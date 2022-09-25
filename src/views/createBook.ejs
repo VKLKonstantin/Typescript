@@ -1,0 +1,29 @@
+<%- include('header'), {title:title} %>
+    <div>
+        <table>
+            <tr>
+                <th>title</th>
+                <th>description</th>
+                <th>authors</th>
+                <th>favorite</th>
+                <th>fileCover</th>
+                <th>fileName</th>
+         
+            </tr>
+            <tr>
+                <form method="POST" style="position: relative" action="/api/createBook">
+                    <th><input type="text" id="title" value="" name="title" ></th>
+                    <th><input type="text" id="description" value="" name="description"></th>
+                    <th><input type="text" id="authors"  value="" name="authors"></th>
+                    <th><input type="text" id="favorite" value="" name="favorite"></th>
+                    <th><input type="text" id="fileCover" value="" name="fileCover"></th>
+                    <th><input type="text" id="fileName" value="" name="fileName"></th>
+          
+                    <button type="submit" class="gradient-button">Сохранить</button>
+                    <a href="/api/menu" class="back"> Назад</a>
+                </form>
+            </tr>
+        </table>
+    </div>
+
+    <%- include('end') %>

@@ -1,0 +1,26 @@
+<%- include('header'), {title:title} %>
+    <div>
+        <table>
+            <tr>
+
+                <th>title</th>
+                <th>authors</th>
+
+            </tr>
+            <% booksList.map((book)=>{ %>
+                <tr>
+                    <td>
+                        <a href="/api/books/<%= book.idBook %>">
+                            <%= book.title %>
+                        </a>
+                    </td>
+                    <td>
+                        <%= book.authors %>
+                    </td>
+                </tr>
+                <% }) %>
+
+        </table>
+        <a href="/api/menu" class="back"> Назад</a>
+    </div>
+    <%- include('end') %>
